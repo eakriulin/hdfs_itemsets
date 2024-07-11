@@ -4,13 +4,17 @@ from pyspark.sql import SparkSession
 from itertools import combinations
 from operator import add
 
-if len(sys.argv) != 3:
-    sys.exit('Provide paths input file and output dir')
+if len(sys.argv) != 4:
+    sys.exit('Provide HDFS URI, input filepath and output dir')
 
-input_filepath = sys.argv[1]
-output_dir = sys.argv[2]
+hdfs_uri = sys.argv[1]
+input_filepath = sys.argv[2]
+output_dir = sys.argv[3]
 
-spark: SparkSession = SparkSession.builder.appName('frequent_itemsets').getOrCreate()
+spark: SparkSession = SparkSession.builder \
+    .appName('frequent_itemsets') \
+    .config("spark.hadoop.fs.defaultFS", hdfs_uri) \
+    .getOrCreate()
 
 SUPPORT_THRESHOLD = 2
 

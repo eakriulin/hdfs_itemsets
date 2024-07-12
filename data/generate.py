@@ -28,7 +28,7 @@ def generate_basket(items=items, min_items=1, max_items=10):
     return random.sample(items, num_items)
 
 num_of_iterations = 100
-num_of_baskets_per_iteration = 100000
+num_of_baskets_per_iteration = 10000
 baskets_rdd = spark.sparkContext.emptyRDD()
 
 for _ in range(num_of_iterations):

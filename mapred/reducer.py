@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
-SUPPORT_THRESHOLD = 10000
+SUPPORT_THRESHOLD = 1000
 
 current_item = None
 current_count = 0

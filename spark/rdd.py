@@ -1,5 +1,4 @@
 import sys
-import time
 from pyspark.sql import SparkSession
 from itertools import combinations
 from operator import add

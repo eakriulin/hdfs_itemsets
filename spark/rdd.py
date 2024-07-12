@@ -15,7 +15,7 @@ spark: SparkSession = SparkSession.builder \
     .config("spark.hadoop.fs.defaultFS", hdfs_uri) \
     .getOrCreate()
 
-SUPPORT_THRESHOLD = 1000
+SUPPORT_THRESHOLD = 150
 
 def mapper(line: str) -> list[tuple[str, int]]:
     items = line.split(',')
